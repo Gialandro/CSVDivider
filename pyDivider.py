@@ -1,7 +1,7 @@
 import csv
 import math
 
-print('PyDivider v0.1')
+print('PyDivider Alpha0.1')
 while True:
     try:
         csvLocation = str(input('Enter the name of CSV to open like "file.csv": '))
