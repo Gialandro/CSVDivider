@@ -1,6 +1,6 @@
 ## CSV Divider
-Script to divide a CSV file in other more little files
+Script para dividir archivos CSV in otros mas pequeños
 
-### Notes:
-* Version of Python used: 3.x
-* Put the scrypt in the same folder of the CSV file to divide
+### Notas:
+* Version de Python usada: 3.x
+* Colocar el scrypt in la misma carpeta que el archivo CSV a dividir

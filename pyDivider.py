@@ -14,18 +14,18 @@ while True:
         print('Numero de filas invalido, intenta de nuevo.')
 nameCSV = 'Archivo'
 readHeader = csv.reader(csvToDivide)
-bodyLst = list() #List of elements
-head = list() #List of header
+bodyLst = list() #Lista de elementos
+head = list() #Lista del encabezado
 for row in readHeader:
     if readHeader.line_num == 1:
         head.append(row)
     else:
         bodyLst.append(row)
 header = head[0]
-numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Number of files to create
+numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Numero de archivos a crear
 
 for element in range(0, numFiles):
-    nameF = (nameCSV + ' {0}' + '.csv').format(element) #Automatic name
+    nameF = (nameCSV + ' {0}' + '.csv').format(element) #Nombre automatico
     with open(nameF, 'w') as fileCSV:
         fileWriter = csv.writer(fileCSV, lineterminator='\n')
         fileWriter.writerow(header)
