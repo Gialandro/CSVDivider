@@ -4,7 +4,7 @@ import math
 print('PyDivider v0.1')
 while True:
     try:
-        csvLocation = str(input('Enter the name of CSV to open like "file.csv"a: '))
+        csvLocation = str(input('Enter the name of CSV to open like "file.csv": '))
         rowsPerFile = int(input('Enter number of rows per file: '))
         csvToDivide = open(csvLocation, newline = '', encoding='utf-8')
         break
