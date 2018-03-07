@@ -4,15 +4,15 @@ import math
 print('PyDivider v0.1')
 while True:
     try:
-        csvLocation = str(input('Enter the name of CSV to open like "file.csv"a: '))
-        rowsPerFile = int(input('Enter number of rows per file: '))
+        csvLocation = str(input('Ingresa el nombre del archivo CSV a abrir como "nombre.csv": '))
+        rowsPerFile = int(input('Ingresa el numero de filas por archivo: '))
         csvToDivide = open(csvLocation, newline = '', encoding='utf-8')
         break
     except IOError:
-        print('File not found, try again.')
+        print('Archivo no encontrado, intenta de nuevo.')
     except ValueError:
-        print('Invalid number of rows, try again.')
-nameCSV = 'File'
+        print('Numero de filas invalido, intenta de nuevo.')
+nameCSV = 'Archivo'
 readHeader = csv.reader(csvToDivide)
 bodyLst = list() #List of elements
 head = list() #List of header
