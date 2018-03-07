@@ -2,11 +2,17 @@ import csv
 import math
 
 print('PyDivider v0.1')
-csvLocation = str(input('Enter the name of CSV to open like "file.csv"a: '))
-rowsPerFile = int(input('Enter number of rows per file: '))
+while True:
+    try:
+        csvLocation = str(input('Enter the name of CSV to open like "file.csv"a: '))
+        rowsPerFile = int(input('Enter number of rows per file: '))
+        csvToDivide = open(csvLocation, newline = '', encoding='utf-8')
+        break
+    except IOError:
+        print('File not found, try again.')
+    except ValueError:
+        print('Invalid number of rows, try again.')
 nameCSV = 'File'
-
-csvToDivide = open(csvLocation, newline = '', encoding='utf-8')
 readHeader = csv.reader(csvToDivide)
 bodyLst = list() #List of elements
 head = list() #List of header
