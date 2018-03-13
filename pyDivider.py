@@ -22,12 +22,14 @@ for row in readHeader:
     else:
         bodyLst.append(row)
 header = head[0]
+# if (header[0] == 'Id' or header[0] == 'ID'):
+#     header[0] = '"{0}"'.format(header[0])
 numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Number of files to create
 
 for element in range(0, numFiles):
     nameF = (nameCSV + ' {0}' + '.csv').format(element) #Automatic name
     with open(nameF, 'w') as fileCSV:
-        fileWriter = csv.writer(fileCSV, lineterminator='\n')
+        fileWriter = csv.writer(fileCSV, quoting = csv.QUOTE_ALL, lineterminator='\n')
         fileWriter.writerow(header)
         for row in range(0, rowsPerFile):
             if len(bodyLst) > 0:
