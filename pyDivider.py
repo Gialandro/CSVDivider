@@ -9,9 +9,9 @@ while True:
         csvToDivide = open(csvLocation, newline = '', encoding='utf-8')
         break
     except IOError:
-        print('File not found, try again.')
+        print('File not found, try again. (╯°□°)╯︵ ┻━┻')
     except ValueError:
-        print('Invalid number of rows, try again.')
+        print('Invalid number of rows, try again. ヽ(｀Д´)ﾉ')
 nameCSV = 'File'
 readHeader = csv.reader(csvToDivide)
 bodyLst = list() #List of elements
@@ -25,7 +25,7 @@ header = head[0]
 # if (header[0] == 'Id' or header[0] == 'ID'):
 #     header[0] = '"{0}"'.format(header[0])
 numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Number of files to create
-
+print('Working... ヽ(｀Д´)⊃━☆ﾟ. * ･ ｡ﾟ,')
 for element in range(0, numFiles):
     nameF = (nameCSV + ' {0}' + '.csv').format(element) #Automatic name
     with open(nameF, 'w') as fileCSV:
@@ -34,4 +34,5 @@ for element in range(0, numFiles):
         for row in range(0, rowsPerFile):
             if len(bodyLst) > 0:
                 fileWriter.writerow(bodyLst.pop())
+print('Done. ＼(＾O＾)／')
 csvToDivide.close()
