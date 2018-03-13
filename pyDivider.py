@@ -27,7 +27,7 @@ numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Numero de archivos a crea
 for element in range(0, numFiles):
     nameF = (nameCSV + ' {0}' + '.csv').format(element) #Nombre automatico
     with open(nameF, 'w') as fileCSV:
-        fileWriter = csv.writer(fileCSV, lineterminator='\n')
+        fileWriter = csv.writer(fileCSV, quoting = csv.QUOTE_ALL, lineterminator='\n')
         fileWriter.writerow(header)
         for row in range(0, rowsPerFile):
             if len(bodyLst) > 0:
