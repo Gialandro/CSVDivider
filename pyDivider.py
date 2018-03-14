@@ -13,8 +13,10 @@ while True:
         csvToDivide = open(csvLocation, newline = '', encoding='utf-8')
         break
     except IOError:
+        os.system('cls||clear')
         print('File not found, try again. {0}'.format(asciimoji[2]))
     except ValueError:
+        os.system('cls||clear')
         print('Invalid number of rows, try again. {0}'.format(asciimoji[3]))
 
 nameCSV = csvLocation.split('.')[0]
@@ -34,7 +36,7 @@ numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Number of files to create
 
 for element in range(0, numFiles):
     os.system('cls||clear')
-    print('{} File...'.format(asciimoji[0]))
+    print('{0} File...'.format(asciimoji[0]))
     time.sleep(0.7)
     nameF = (nameCSV + 'Child {0}' + '.csv').format(element) #Automatic name
     with open(nameF, 'w') as fileCSV:
@@ -44,7 +46,7 @@ for element in range(0, numFiles):
             if len(bodyLst) > 0:
                 fileWriter.writerow(bodyLst.pop())
     os.system('cls||clear')
-    print('{} Created!'.format(asciimoji[1]))
+    print('{0} Created!'.format(asciimoji[1]))
     files +=1
     time.sleep(0.9)
 
