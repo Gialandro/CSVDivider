@@ -12,7 +12,7 @@ while True:
         print('File not found, try again. (╯°□°)╯︵ ┻━┻')
     except ValueError:
         print('Invalid number of rows, try again. ヽ(｀Д´)ﾉ')
-nameCSV = 'File'
+nameCSV = csvLocation.split('.')[0]
 readHeader = csv.reader(csvToDivide)
 bodyLst = list() #List of elements
 head = list() #List of header
@@ -27,7 +27,7 @@ header = head[0]
 numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Number of files to create
 print('Working... ヽ(｀Д´)⊃━☆ﾟ. * ･ ｡ﾟ,')
 for element in range(0, numFiles):
-    nameF = (nameCSV + ' {0}' + '.csv').format(element) #Automatic name
+    nameF = (nameCSV + 'Child {0}' + '.csv').format(element) #Automatic name
     with open(nameF, 'w') as fileCSV:
         fileWriter = csv.writer(fileCSV, quoting = csv.QUOTE_ALL, lineterminator='\n')
         fileWriter.writerow(header)
