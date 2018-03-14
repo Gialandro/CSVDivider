@@ -12,7 +12,7 @@ while True:
         print('Archivo no encontrado, intenta de nuevo. (╯°□°)╯︵ ┻━┻')
     except ValueError:
         print('Numero de filas invalido, intenta de nuevo. ヽ(｀Д´)ﾉ')
-nameCSV = 'Archivo'
+nameCSV = csvLocation.split('.')[0]
 readHeader = csv.reader(csvToDivide)
 bodyLst = list() #Lista de elementos
 head = list() #Lista del encabezado
@@ -25,7 +25,7 @@ header = head[0]
 numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Numero de archivos a crear
 print('Trabajando... ヽ(｀Д´)⊃━☆ﾟ. * ･ ｡ﾟ,')
 for element in range(0, numFiles):
-    nameF = (nameCSV + ' {0}' + '.csv').format(element) #Nombre automatico
+    nameF = (nameCSV + 'Hijo {0}' + '.csv').format(element) #Nombre automatico
     with open(nameF, 'w') as fileCSV:
         fileWriter = csv.writer(fileCSV, quoting = csv.QUOTE_ALL, lineterminator='\n')
         fileWriter.writerow(header)
