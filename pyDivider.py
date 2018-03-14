@@ -29,6 +29,7 @@ for row in readHeader:
         bodyLst.append(row)
 
 header = head[0]
+files = 0
 numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Number of files to create
 
 for element in range(0, numFiles):
@@ -44,8 +45,9 @@ for element in range(0, numFiles):
                 fileWriter.writerow(bodyLst.pop())
     os.system('cls||clear')
     print('{} Created!'.format(asciimoji[1]))
+    files +=1
     time.sleep(0.9)
 
 os.system('cls||clear')
-print('Done. ＼(＾O＾)／')
+print('Done. {0} files created ＼(＾O＾)／'.format(files))
 csvToDivide.close()
