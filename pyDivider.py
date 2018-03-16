@@ -5,7 +5,7 @@ import time
 
 asciimoji = ('ᕦ( ͡° ͜ʖ ͡°)ᕤ', '╰( ͡° ͜ʖ ͡° )つ──☆*:・ﾟ', '(╯°□°)╯︵ ┻━┻', 'ヽ(｀Д´)ﾉ')
 os.system('cls||clear')
-print('PyDivider Alpha0.1')
+print('PyDivider Alpha0.2')
 while True:
     try:
         csvLocation = str(input('Enter the name of CSV to open like "file.csv": '))
