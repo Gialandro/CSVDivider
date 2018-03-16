@@ -33,11 +33,11 @@ for row in readHeader:
 header = head[0]
 files = 0
 numFiles = math.ceil(int(len(bodyLst)) / rowsPerFile) #Number of files to create
+os.system('cls||clear')
+print('{0} Files...'.format(asciimoji[0]))
+time.sleep(0.7)
 
 for element in range(0, numFiles):
-    os.system('cls||clear')
-    print('{0} File...'.format(asciimoji[0]))
-    time.sleep(0.7)
     nameF = (nameCSV + 'Child {0}' + '.csv').format(element) #Automatic name
     with open(nameF, 'w') as fileCSV:
         fileWriter = csv.writer(fileCSV, quoting = csv.QUOTE_ALL, lineterminator='\n')
@@ -45,11 +45,11 @@ for element in range(0, numFiles):
         for row in range(0, rowsPerFile):
             if len(bodyLst) > 0:
                 fileWriter.writerow(bodyLst.pop())
-    os.system('cls||clear')
-    print('{0} Created!'.format(asciimoji[1]))
     files +=1
-    time.sleep(0.9)
 
+os.system('cls||clear')
+print('{0} Created!'.format(asciimoji[1]))
+time.sleep(1)
 os.system('cls||clear')
 print('Done. {0} files created ＼(＾O＾)／'.format(files))
 csvToDivide.close()
